@@ -280,6 +280,9 @@ print(f'\nThe board display is {board_display}')
 print(f'\nPemain {pemain}')
 
 winner(board_display,pemain) # fix it! not working!
-#https://stackoverflow.com/questions/25905300/modifying-global-dictionary-in-python-within-a-function
-#https://www.dataquest.io/blog/tutorial-functions-modify-lists-dictionaries-python/
-#
+'''
+https://stackoverflow.com/questions/25905300/modifying-global-dictionary-in-python-within-a-function
+https://www.dataquest.io/blog/tutorial-functions-modify-lists-dictionaries-python/
+
+we should use list.copy or dict.copy in order to prevent the variable change globally
+'''
