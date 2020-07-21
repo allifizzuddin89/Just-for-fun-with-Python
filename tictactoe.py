@@ -31,7 +31,7 @@ def intro():
 
 #PLAYER BOARD ASSIGNMENT 
 def print_board(player,post):
-    board_print = board
+    board_print = board.copy()
     if player == 1:
         post = str(post)
         board_print[post] = 'X'
@@ -85,7 +85,7 @@ def julat(tic=0):
 def position(tic):
     tic = str(tic)
     #print(tic)
-    display_tic = display
+    display_tic = display.copy()
     display_tic.pop(tic)
     x =len(display_tic)
     #print('\n',display,'\n')
@@ -93,7 +93,8 @@ def position(tic):
     return x,display_tic
 
 #CHECK IF THE MARK IS EXIST
-def checkMark(board1,tic):
+def checkMark(x,tic):
+    board1 = x.copy()
     print(board1)
     #tic = str(tic)
     #print('The mark is {}'.format(board1[tic]))
@@ -106,17 +107,17 @@ def checkMark(board1,tic):
 
 
 #CHECK WHO IS THE WINNER
-def winner(board1,player):
-    if board1['7'] == board1['4']:
-        if board1['7'] == board1['1']:
-            if board1['7'] != ' ' or board1['4'] != ' ' or board1['1'] != ' ' :      
-                print('Player {} WIN\n'.format(player))
-                print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-                print('+++++')
-                print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-                print('+++++')
-                print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-                return False
+def winner(y,player):
+    board1 = y.copy()
+    if board1['7'] == board1['4'] and board1['7'] == board1['1']:
+        if board1['7'] != ' ' or board1['4'] != ' ' or board1['1'] != ' ' :      
+            print('Player {} WIN\n'.format(player))
+            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+            print('+++++')
+            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+            print('+++++')
+            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+            return False
     elif board1['7'] == board1['5'] and board1['7'] == board1['3']:
         if board1['7'] != ' ' or board1['5'] != ' ' or board1['3'] != ' ' :
             print('Player {} WIN\n'.format(player))
@@ -278,8 +279,10 @@ print(f'Length of the dict left is {count_marker}')
 print(f'The board iteration as follows : {display_tic1}')
 print(f'\nThe board display is {board_display}')
 print(f'\nPemain {pemain}')
+final_board = board_display.copy()
+replay = winner(final_board,pemain) # fix it! not working!
+print(replay)
 
-winner(board_display,pemain) # fix it! not working!
 '''
 https://stackoverflow.com/questions/25905300/modifying-global-dictionary-in-python-within-a-function
 https://www.dataquest.io/blog/tutorial-functions-modify-lists-dictionaries-python/
