@@ -109,16 +109,16 @@ def checkMark(x,tic):
     #tic = str(tic)
     #print('The mark is {}'.format(board1[tic]))
     
-    if tic in board_print.keys() == True:
+    if tic in x.keys() == True:
         pass
-    elif tic in board_print1.keys() == False:
+    elif tic in x.keys() == False:
         print("The mark already taken")
         
 
 
 #CHECK WHO IS THE WINNER
 def winner(y,player):
-    board1 = y.copy()
+    board1 = y
     if board1['7'] == board1['4'] == board1['1'] != ' ' :      
         print('Player {} WIN\n'.format(player))
         print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
@@ -235,6 +235,7 @@ def gameplay():
         elif pemain == 2:
             pemain = 1
         
+        print(board_print)
         # final_board = board_display.copy()
         replay = winner(board_print,posisi)
 
