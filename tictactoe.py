@@ -12,9 +12,9 @@ board = {'7':' ', '8':' ', '9':' ',
             '4':' ', '5':' ', '6':' ', 
             '1':' ', '2':' ', '3':' '}
 
-update_board = {'7':'X', '8':'O', '9':'O', 
-            '4':' ', '5':' ', '6':' ', 
-            '1':' ', '2':' ', '3':' '}
+# update_board = {'7':'X', '8':'O', '9':'O', 
+#             '4':' ', '5':' ', '6':' ', 
+#             '1':' ', '2':' ', '3':' '}
 
 #dummy counter
 display = board.copy()
@@ -100,7 +100,7 @@ def position(tic):
     x =len(display_tic)
     #print('\n',display,'\n')
     #print(f'Length of the dict is {x}')
-    return x,display_tic
+    return x
 
 #CHECK IF THE MARK IS EXIST
 def checkMark(x,tic):
@@ -192,30 +192,6 @@ def sambung():
             print('SEE YAAA')
             break
 
-def game(board):
-    
-    game_on = True
-    lost = False
-    player = 0
-    mark = 'X'
-    tic = 1
-    intro()
-
-    while game_on == True:
-        player,mark = marker()
-        checkMark(board,tic)
-        tic = julat()
-        display, tic = position(tic)
-        board = print_board(player,tic)
-        lost = winner(board,player)
-        if lost == True:
-            print('Player {} won the game'.format(player))
-            game_on = False
-            break
-        else :
-            continue
-    return False
-
 #test
 '''
 def winner1(board,player):
@@ -243,43 +219,44 @@ while tictactoe == True:
         tictactoe = False
         break
 '''
-#intro()
-#print_board(1,1)
-#marker()
-#julat()
 
+def gameplay():
+    intro()
+    pemain, tanda = marker()
+    kira = 10
+    for kira in range(1,10):
+        
+        posisi = julat()
+        checkMark(display,posisi)
+        board_display = print_board(pemain,posisi)
 
-# update_board,post = position(8)
-# print('\nUpdated board post is {}'.format(update_board))
-# print('\nPlayer mark is {}'.format(post))
+        if pemain == 1:
+            pemain = 2
+        elif pemain == 2:
+            pemain = 1
+        
+        final_board = board_display.copy()
+        replay = winner(final_board,2)
 
-#problem
-#checkMark(update_board,post)
+        if replay == True:
+            pass
+        elif replay == False:
+            return replay
+            break
 
+        kira = position(posisi)
 
-
-# #print(update_board)
-
-
-# replay = winner(update_board,1)
-# print(replay)
-
-#print(type(update_board))
-
-#position(1)
-
-# checkMark(update_board,2)
-
-intro()
-pemain, tanda = marker()
-posisi = julat()
-checkMark(display,posisi)
-board_display = print_board(pemain,posisi)
-count_marker,display_tic1 = position(posisi)
-
-final_board = board_display.copy()
-replay = winner(final_board,2) 
-print(replay)
+game = True
+while game == True:
+    sambung = gameplay()
+    if sambung == False:
+        x = input("Do you want continue? Yes/No : ")
+        if x == 'Yes':
+            continue
+        elif x == 'No':
+            print("Thank you, See ya again")
+            game = False
+            sys.exit("BYE BYE!")
 
 '''
 https://stackoverflow.com/questions/25905300/modifying-global-dictionary-in-python-within-a-function
