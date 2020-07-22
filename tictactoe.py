@@ -4,11 +4,21 @@ BY ALLIF IZZUDDIN BIN ABDULLAH
 '''
 
 #INITIAL VALUE OF BOARD
-board = {'1':' ', '2':' ', '3':' ', 
-            '4':' ', '5':' ', '6':' ', 
-            '7':' ', '8':' ', '9':' '}
+# board = {'1':' ', '2':' ', '3':' ', 
+#             '4':' ', '5':' ', '6':' ', 
+#             '7':' ', '8':' ', '9':' '}
 
-display = board
+board = {'7':' ', '8':' ', '9':' ', 
+            '4':' ', '5':' ', '6':' ', 
+            '1':' ', '2':' ', '3':' '}
+
+update_board = {'7':'X', '8':'O', '9':'O', 
+            '4':' ', '5':' ', '6':' ', 
+            '1':' ', '2':' ', '3':' '}
+
+#dummy counter
+display = board.copy()
+
 #DEFAULT INTRO
 def intro():
     print("TIC TAC TOE BY ALLIF IZZUDDIN")
@@ -35,15 +45,15 @@ def print_board(player,post):
     if player == 1:
         post = str(post)
         board_print[post] = 'X'
-    if player == 2:
+    elif player == 2:
         post = str(post)
         board_print[post] = 'O'
-    print(f'Board print is {board_print}')
-    print(board['7'] + '|' + board['8'] + '|' + board['9'])
-    print('+++++')
-    print(board['4'] + '|' + board['5'] + '|' + board['6'])
-    print('+++++')
-    print(board['1'] + '|' + board['2'] + '|' + board['3'])
+    # print(f'Board print is {board_print}')
+    # print(board_print['7'] + '|' + board_print['8'] + '|' + board_print['9'])
+    # print('+++++')
+    # print(board_print['4'] + '|' + board_print['5'] + '|' + board_print['6'])
+    # print('+++++')
+    # print(board_print['1'] + '|' + board_print['2'] + '|' + board_print['3'])
     return board_print
 
 #ASSIGN THE PLAYER (1 OR 2)
@@ -95,7 +105,7 @@ def position(tic):
 #CHECK IF THE MARK IS EXIST
 def checkMark(x,tic):
     board1 = x.copy()
-    print(board1)
+    # print(board1)
     #tic = str(tic)
     #print('The mark is {}'.format(board1[tic]))
     
@@ -109,69 +119,62 @@ def checkMark(x,tic):
 #CHECK WHO IS THE WINNER
 def winner(y,player):
     board1 = y.copy()
-    if board1['7'] == board1['4'] and board1['7'] == board1['1']:
-        if board1['7'] != ' ' or board1['4'] != ' ' or board1['1'] != ' ' :      
-            print('Player {} WIN\n'.format(player))
-            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-            print('+++++')
-            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-            print('+++++')
-            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-            return False
-    elif board1['7'] == board1['5'] and board1['7'] == board1['3']:
-        if board1['7'] != ' ' or board1['5'] != ' ' or board1['3'] != ' ' :
-            print('Player {} WIN\n'.format(player))
-            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-            print('+++++')
-            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-            print('+++++')
-            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-            return False
-    elif (board1['7'] == board1['8'] and board1['7'] == board1['9']) :
-        if board1['7'] != ' ' or board1['8'] != ' ' or board1['9'] != ' ' :
-            print('Player {} WIN\n'.format(player))
-            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-            print('+++++')
-            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-            print('+++++')
-            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-            return False
-    elif (board1['8'] == board1['5'] and board1['8'] == board1['2']) :
-        if board1['8'] != ' ' or board1['5'] != ' ' or board1['2'] != ' ' :
-            print('Player {} WIN\n'.format(player))
-            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-            print('+++++')
-            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-            print('+++++')
-            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-            return False
-    elif (board1['9'] == board1['5'] and board1['9'] == board1['1']) :
-        if board1['9'] != ' ' or board1['5'] != ' ' or board1['1'] != ' ' :
-            print('Player {} WIN\n'.format(player))
-            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-            print('+++++')
-            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-            print('+++++')
-            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-            return False
-    elif (board1['9'] == board1['6'] and board1['9'] == board1['3']) :
-        if board1['9'] != ' ' or board1['6'] != ' ' or board1['3'] != ' ' :
-            print('Player {} WIN\n'.format(player))
-            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-            print('+++++')
-            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-            print('+++++')
-            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-            return False
-    elif (board1['1'] == board1['2'] and board1['1'] == board1['3']) :
-        if board1['1'] != ' ' or board1['2'] != ' ' or board1['3'] != ' ' :
-            print('Player {} WIN\n'.format(player))
-            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-            print('+++++')
-            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-            print('+++++')
-            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-            return False
+    if board1['7'] == board1['4'] == board1['1'] != ' ' :      
+        print('Player {} WIN\n'.format(player))
+        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+        print('+++++')
+        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+        print('+++++')
+        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+        return False
+    elif board1['7'] == board1['5'] == board1['3'] != ' ' :
+        print('Player {} WIN\n'.format(player))
+        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+        print('+++++')
+        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+        print('+++++')
+        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+        return False
+    elif board1['7'] == board1['8']  == board1['9'] != ' ' :
+        print('Player {} WIN\n'.format(player))
+        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+        print('+++++')
+        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+        print('+++++')
+        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+        return False
+    elif board1['8'] == board1['5'] == board1['2'] != ' ' :
+        print('Player {} WIN\n'.format(player))
+        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+        print('+++++')
+        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+        print('+++++')
+        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+        return False
+    elif board1['9'] == board1['5'] == board1['1'] != ' ' :
+        print('Player {} WIN\n'.format(player))
+        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+        print('+++++')
+        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+        print('+++++')
+        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+        return False
+    elif board1['9'] == board1['6'] == board1['3'] != ' ' :
+        print('Player {} WIN\n'.format(player))
+        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+        print('+++++')
+        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+        print('+++++')
+        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+        return False
+    elif board1['1'] == board1['2'] == board1['3'] != ' ' :
+        print('Player {} WIN\n'.format(player))
+        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+        print('+++++')
+        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+        print('+++++')
+        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+        return False
     else :
         print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
         print('+++++')
@@ -253,9 +256,7 @@ while tictactoe == True:
 #problem
 #checkMark(update_board,post)
 
-# update_board ={'7':'X', '8':'X', '9':' ', 
-#             '4':'X', '5':' ', '6':' ', 
-#             '1':'O', '2':' ', '3':'X'}
+
 
 # #print(update_board)
 
@@ -274,13 +275,17 @@ pemain, tanda = marker()
 posisi = julat()
 checkMark(display,posisi)
 board_display = print_board(pemain,posisi)
-count_marker,display_tic1 = position(posisi) #fix it! globally delete keys
-print(f'Length of the dict left is {count_marker}')
-print(f'The board iteration as follows : {display_tic1}')
-print(f'\nThe board display is {board_display}')
-print(f'\nPemain {pemain}')
+count_marker,display_tic1 = position(posisi)
+# print(f'Length of the dict left is {count_marker}')
+# print(f'The board iteration as follows : {display_tic1}')
+# print(f'\nThe board display is {board_display}')
+# print(f'\nThe board display type is {type(board_display)}')
+# print(f'\nThe board display is {update_board}')
+# print(f'\nThe board display type is {type(update_board)}')
+# print(f'\nPemain {pemain}')
+# final_board = update_board.copy()
 final_board = board_display.copy()
-replay = winner(final_board,pemain) # fix it! not working!
+replay = winner(final_board,2) # fix it! not working!
 print(replay)
 
 '''

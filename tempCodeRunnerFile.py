@@ -1,0 +1,6 @@
+print(f'Board print is {board_print}')
+    # print(board_print['7'] + '|' + board_print['8'] + '|' + board_print['9'])
+    # print('+++++')
+    # print(board_print['4'] + '|' + board_print['5'] + '|' + board_print['6'])
+    # print('+++++')
+    # print(board_print['1'] + '|' + board_print['2'] + '|' + board_print['3'])
