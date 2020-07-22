@@ -43,7 +43,6 @@ def intro():
 
 #PLAYER BOARD ASSIGNMENT 
 def print_board(player,post):
-    board_print = board.copy()
     if player == 1:
         post = str(post)
         board_print[post] = 'X'
@@ -78,9 +77,9 @@ def marker(player=0, marker='X'):
     return player,marker
 
 #CHECK THE TIC RANGE
-def julat(tic=0):
+def julat(player,tic=0):
     while True:
-        tic = input('\nPlease mark your board :')
+        tic = input(f'\nPlayer {player} mark your board :')
         if tic.isdigit() == True:
             tic1 = int(tic)
             #print(tic1)
@@ -97,7 +96,7 @@ def julat(tic=0):
 def position(tic):
     tic = str(tic)
     #print(tic)
-    display_tic = display.copy()
+    display_tic = board_print.copy()
     display_tic.pop(tic)
     x =len(display_tic)
     #print('\n',display,'\n')
@@ -106,14 +105,13 @@ def position(tic):
 
 #CHECK IF THE MARK IS EXIST
 def checkMark(x,tic):
-    board1 = x.copy()
     # print(board1)
     #tic = str(tic)
     #print('The mark is {}'.format(board1[tic]))
     
-    if tic in board1.keys() == True:
+    if tic in board_print.keys() == True:
         pass
-    elif tic in board1.keys() == False:
+    elif tic in board_print1.keys() == False:
         print("The mark already taken")
         
 
@@ -225,20 +223,20 @@ while tictactoe == True:
 def gameplay():
     intro()
     pemain, tanda = marker()
-    kira = 10
-    for kira in range(1,10):
-        
-        posisi = julat()
-        checkMark(display,posisi)
-        board_display = print_board(pemain,posisi)
+    kira = 9
+    board_print = board.copy()
+    for x in kira:        
+        posisi = julat(pemain)
+        checkMark(board_print,posisi)
+        board_print = print_board(pemain,posisi)
 
         if pemain == 1:
             pemain = 2
         elif pemain == 2:
             pemain = 1
         
-        final_board = board_display.copy()
-        replay = winner(final_board,2)
+        # final_board = board_display.copy()
+        replay = winner(board_print,posisi)
 
         if replay == True:
             pass
@@ -246,12 +244,13 @@ def gameplay():
             return replay
             break
 
-        kira = position(posisi)
+        position(posisi)
 
 game = True
 while game == True:
     sambung = gameplay()
     if sambung == False:
+        print("GAME OVER")
         x = input("Do you want continue? Yes/No : ")
         if x == 'Yes':
             continue
