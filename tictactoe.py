@@ -276,16 +276,9 @@ posisi = julat()
 checkMark(display,posisi)
 board_display = print_board(pemain,posisi)
 count_marker,display_tic1 = position(posisi)
-# print(f'Length of the dict left is {count_marker}')
-# print(f'The board iteration as follows : {display_tic1}')
-# print(f'\nThe board display is {board_display}')
-# print(f'\nThe board display type is {type(board_display)}')
-# print(f'\nThe board display is {update_board}')
-# print(f'\nThe board display type is {type(update_board)}')
-# print(f'\nPemain {pemain}')
-# final_board = update_board.copy()
+
 final_board = board_display.copy()
-replay = winner(final_board,2) # fix it! not working!
+replay = winner(final_board,2) 
 print(replay)
 
 '''
