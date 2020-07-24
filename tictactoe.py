@@ -48,6 +48,9 @@ def intro():
 def print_board(player,post):
     print(board_print)
     print(type(board_print))
+
+    #had to change post type to str, else it will append a new tuples instead of update the value of the dict
+    #anything inside dict tuples is str
     if player == 1:
         post = str(post)
         board_print[post] = 'X'
@@ -197,33 +200,7 @@ def sambung():
             print('SEE YAAA')
             break
 
-#test
-'''
-def winner1(board,player):
-    if board['7'] == board['4']:
-        if board['7'] == board['1']:
-            print('Player {} win'.format(player))
-            print('\nCase 2\n')
-            print(board['7'] + '|' + board['8'] + '|' + board['9'])
-            print('+++++')
-            print(board['4'] + '|' + board['5'] + '|' + board['6'])
-            print('+++++')
-            print(board['1'] + '|' + board['2'] + '|' + board['3'])
-        else:
-            print('TEETTTT')
-'''
-'''
-tictactoe = True
 
-while tictactoe == True:
-    #main = True
-    main_on = game(board)
-    if main_on == False:
-        sambung()
-    else:
-        tictactoe = False
-        break
-'''
 
 def gameplay():
     intro()
