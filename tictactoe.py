@@ -9,10 +9,13 @@ BY ALLIF IZZUDDIN BIN ABDULLAH
 #             '7':' ', '8':' ', '9':' '}
 
 import sys
+import copy
 
 board = {'7':' ', '8':' ', '9':' ', 
             '4':' ', '5':' ', '6':' ', 
             '1':' ', '2':' ', '3':' '}
+
+board_print = board.copy()
 
 # update_board = {'7':'X', '8':'O', '9':'O', 
 #             '4':' ', '5':' ', '6':' ', 
@@ -43,6 +46,8 @@ def intro():
 
 #PLAYER BOARD ASSIGNMENT 
 def print_board(player,post):
+    print(board_print)
+    print(type(board_print))
     if player == 1:
         post = str(post)
         board_print[post] = 'X'
@@ -223,9 +228,8 @@ while tictactoe == True:
 def gameplay():
     intro()
     pemain, tanda = marker()
-    kira = 9
     board_print = board.copy()
-    for x in kira:        
+    for x in range(1,10):        
         posisi = julat(pemain)
         checkMark(board_print,posisi)
         board_print = print_board(pemain,posisi)
@@ -246,14 +250,16 @@ def gameplay():
             break
 
         position(posisi)
+    print('GAME OVER')
+    return False
 
 game = True
 while game == True:
     sambung = gameplay()
     if sambung == False:
-        print("GAME OVER")
         x = input("Do you want continue? Yes/No : ")
         if x == 'Yes':
+            board_print = board.copy()
             continue
         elif x == 'No':
             print("Thank you, See ya again")
