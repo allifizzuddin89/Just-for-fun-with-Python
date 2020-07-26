@@ -125,7 +125,7 @@ def checkMark(x,tic):
 
 
 #CHECK WHO IS THE WINNER
-def winner(y,player=0):
+def winner(y,player):
     board1 = y
     if board1['7'] == board1['4'] == board1['1'] != ' ' :      
         print('Player {} WIN\n'.format(player))
@@ -183,13 +183,21 @@ def winner(y,player=0):
         print('+++++')
         print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
         return False
-    else :
+    elif board1['1'] == board1['2'] == board1['3'] == board1['4'] == board1['5'] == board1['6'] == board1['7'] == board1['8'] == board1['9'] != ' ' :
         print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
         print('+++++')
         print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
         print('+++++')
         print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
         return True
+    else :
+        print('Player {} WIN\n'.format(player))
+        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+        print('+++++')
+        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+        print('+++++')
+        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+        return False
 
 def sambung():
     while True:
@@ -221,13 +229,14 @@ def gameplay():
         replay = winner(board_print,pemain)
 
         if replay == True:
+            print('GAME OVER')
             pass
         elif replay == False:
             return replay
             break
 
         position(posisi)
-    print('GAME OVER')
+    #print('GAME OVER')
     return False
 
 game = True
