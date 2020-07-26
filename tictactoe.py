@@ -128,7 +128,7 @@ def checkMark(x,tic):
 def winner(y,player):
     board1 = y
     if board1['7'] == board1['4'] == board1['1'] != ' ' :
-        if (board1['7'] == board1['4'] == board1['1'] == 'X') or  (board1['7'] == board1['4'] == board1['1'] == 'O') :     
+        if (board1['7'] == board1['4'] == board1['1'] == 'X') or (board1['7'] == board1['4'] == board1['1'] == 'O') :     
             print('Player {} WIN\n'.format(player))
             print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
             print('+++++')
@@ -137,7 +137,7 @@ def winner(y,player):
             print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
             return False
     elif board1['7'] == board1['5'] == board1['3'] != ' ' :
-        if (board1['7'] == board1['5'] == board1['3'] == 'X') or  (board1['7'] == board1['5'] == board1['3'] == 'O') :
+        if (board1['7'] == board1['5'] == board1['3'] == 'X') or (board1['7'] == board1['5'] == board1['3'] == 'O') :
             print('Player {} WIN\n'.format(player))
             print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
             print('+++++')
@@ -146,7 +146,7 @@ def winner(y,player):
             print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
             return False
     elif board1['7'] == board1['8']  == board1['9'] != ' ' :
-        if (board1['7'] == board1['8'] == board1['9'] == 'X') or  (board1['7'] == board1['8'] == board1['9'] == 'O') :
+        if (board1['7'] == board1['8'] == board1['9'] == 'X') or (board1['7'] == board1['8'] == board1['9'] == 'O') :
             print('Player {} WIN\n'.format(player))
             print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
             print('+++++')
@@ -155,7 +155,7 @@ def winner(y,player):
             print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
             return False
     elif board1['8'] == board1['5'] == board1['2'] != ' ' :
-        if (board1['8'] == board1['5'] == board1['2'] == 'X') or  (board1['8'] == board1['5'] == board1['2'] == 'O') :
+        if (board1['8'] == board1['5'] == board1['2'] == 'X') or (board1['8'] == board1['5'] == board1['2'] == 'O') :
             print('Player {} WIN\n'.format(player))
             print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
             print('+++++')
@@ -164,7 +164,7 @@ def winner(y,player):
             print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
             return False
     elif board1['9'] == board1['5'] == board1['1'] != ' ' :
-        if (board1['9'] == board1['5'] == board1['1'] == 'X') or  (board1['9'] == board1['5'] == board1['1'] == 'O') :
+        if (board1['9'] == board1['5'] == board1['1'] == 'X') or (board1['9'] == board1['5'] == board1['1'] == 'O') :
             print('Player {} WIN\n'.format(player))
             print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
             print('+++++')
@@ -173,7 +173,7 @@ def winner(y,player):
             print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
             return False
     elif board1['9'] == board1['6'] == board1['3'] != ' ' :
-        if (board1['9'] == board1['6'] == board1['3'] == 'X') or  (board1['9'] == board1['6'] == board1['3'] == 'O') :
+        if (board1['9'] == board1['6'] == board1['3'] == 'X') or (board1['9'] == board1['6'] == board1['3'] == 'O') :
             print('Player {} WIN\n'.format(player))
             print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
             print('+++++')
@@ -182,7 +182,7 @@ def winner(y,player):
             print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
             return False
     elif board1['1'] == board1['2'] == board1['3'] != ' ' :
-        if (board1['1'] == board1['2'] == board1['3'] == 'X') or  (board1['1'] == board1['2'] == board1['3'] == 'O') :
+        if (board1['1'] == board1['2'] == board1['3'] == 'X') or (board1['1'] == board1['2'] == board1['3'] == 'O') :
             print('Player {} WIN\n'.format(player))
             print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
             print('+++++')
