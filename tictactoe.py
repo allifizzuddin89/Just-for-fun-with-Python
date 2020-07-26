@@ -125,7 +125,7 @@ def checkMark(x,tic):
 
 
 #CHECK WHO IS THE WINNER
-def winner(y,player):
+def winner(y,player=0):
     board1 = y
     if board1['7'] == board1['4'] == board1['1'] != ' ' :      
         print('Player {} WIN\n'.format(player))
@@ -218,7 +218,7 @@ def gameplay():
         
         print(board_print)
         # final_board = board_display.copy()
-        replay = winner(board_print,player)
+        replay = winner(board_print,pemain)
 
         if replay == True:
             pass
