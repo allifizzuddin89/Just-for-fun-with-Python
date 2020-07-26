@@ -127,77 +127,85 @@ def checkMark(x,tic):
 #CHECK WHO IS THE WINNER
 def winner(y,player):
     board1 = y
-    if board1['7'] == board1['4'] == board1['1'] != ' ' :      
-        print('Player {} WIN\n'.format(player))
-        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-        print('+++++')
-        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-        print('+++++')
-        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-        return False
+    if board1['7'] == board1['4'] == board1['1'] != ' ' :
+        if (board1['7'] == board1['4'] == board1['1'] == 'X') or  (board1['7'] == board1['4'] == board1['1'] == 'O') :     
+            print('Player {} WIN\n'.format(player))
+            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+            print('+++++')
+            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+            print('+++++')
+            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+            return False
     elif board1['7'] == board1['5'] == board1['3'] != ' ' :
-        print('Player {} WIN\n'.format(player))
-        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-        print('+++++')
-        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-        print('+++++')
-        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-        return False
+        if (board1['7'] == board1['5'] == board1['3'] == 'X') or  (board1['7'] == board1['5'] == board1['3'] == 'O') :
+            print('Player {} WIN\n'.format(player))
+            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+            print('+++++')
+            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+            print('+++++')
+            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+            return False
     elif board1['7'] == board1['8']  == board1['9'] != ' ' :
-        print('Player {} WIN\n'.format(player))
-        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-        print('+++++')
-        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-        print('+++++')
-        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-        return False
+        if (board1['7'] == board1['8'] == board1['9'] == 'X') or  (board1['7'] == board1['8'] == board1['9'] == 'O') :
+            print('Player {} WIN\n'.format(player))
+            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+            print('+++++')
+            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+            print('+++++')
+            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+            return False
     elif board1['8'] == board1['5'] == board1['2'] != ' ' :
-        print('Player {} WIN\n'.format(player))
-        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-        print('+++++')
-        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-        print('+++++')
-        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-        return False
+        if (board1['8'] == board1['5'] == board1['2'] == 'X') or  (board1['8'] == board1['5'] == board1['2'] == 'O') :
+            print('Player {} WIN\n'.format(player))
+            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+            print('+++++')
+            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+            print('+++++')
+            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+            return False
     elif board1['9'] == board1['5'] == board1['1'] != ' ' :
-        print('Player {} WIN\n'.format(player))
-        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-        print('+++++')
-        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-        print('+++++')
-        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-        return False
+        if (board1['9'] == board1['5'] == board1['1'] == 'X') or  (board1['9'] == board1['5'] == board1['1'] == 'O') :
+            print('Player {} WIN\n'.format(player))
+            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+            print('+++++')
+            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+            print('+++++')
+            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+            return False
     elif board1['9'] == board1['6'] == board1['3'] != ' ' :
-        print('Player {} WIN\n'.format(player))
-        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-        print('+++++')
-        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-        print('+++++')
-        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-        return False
+        if (board1['9'] == board1['6'] == board1['3'] == 'X') or  (board1['9'] == board1['6'] == board1['3'] == 'O') :
+            print('Player {} WIN\n'.format(player))
+            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+            print('+++++')
+            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+            print('+++++')
+            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+            return False
     elif board1['1'] == board1['2'] == board1['3'] != ' ' :
-        print('Player {} WIN\n'.format(player))
+        if (board1['1'] == board1['2'] == board1['3'] == 'X') or  (board1['1'] == board1['2'] == board1['3'] == 'O') :
+            print('Player {} WIN\n'.format(player))
+            print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
+            print('+++++')
+            print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
+            print('+++++')
+            print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
+            return False
+    elif (board1['1'] == board1['2'] == board1['3'] == board1['4'] == board1['5'] == board1['6'] == board1['7'] == board1['8'] == board1['9'] != ' ') :
+        print('\nIt is a TIE\n')
         print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
         print('+++++')
         print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
         print('+++++')
         print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
         return False
-    elif board1['1'] == board1['2'] == board1['3'] == board1['4'] == board1['5'] == board1['6'] == board1['7'] == board1['8'] == board1['9'] != ' ' :
+    else :
+        print('\nProceed GAME\n')
         print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
         print('+++++')
         print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
         print('+++++')
         print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
         return True
-    else :
-        print('Player {} WIN\n'.format(player))
-        print(board1['7'] + '|' + board1['8'] + '|' + board1['9'])
-        print('+++++')
-        print(board1['4'] + '|' + board1['5'] + '|' + board1['6'])
-        print('+++++')
-        print(board1['1'] + '|' + board1['2'] + '|' + board1['3'])
-        return False
 
 def sambung():
     while True:
@@ -218,37 +226,38 @@ def gameplay():
         posisi = julat(pemain)
         checkMark(board_print,posisi)
         board_print = print_board(pemain,posisi)
-
-        if pemain == 1:
-            pemain = 2
-        elif pemain == 2:
-            pemain = 1
         
         print(board_print)
         # final_board = board_display.copy()
         replay = winner(board_print,pemain)
 
         if replay == True:
-            print('GAME OVER')
             pass
         elif replay == False:
             return replay
             break
 
         position(posisi)
-    #print('GAME OVER')
+
+        if pemain == 1:
+            pemain = 2
+        elif pemain == 2:
+            pemain = 1
+    
     return False
 
 game = True
 while game == True:
     sambung = gameplay()
     if sambung == False:
+        print('\nGAME OVER\n')
         x = input("Do you want continue? Yes/No : ")
         if x == 'Yes':
             board_print = board.copy()
             continue
         elif x == 'No':
             print("Thank you, See ya again")
+            board_print = board.copy()
             game = False
             sys.exit("BYE BYE!")
 
