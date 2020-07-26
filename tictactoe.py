@@ -218,7 +218,7 @@ def gameplay():
         
         print(board_print)
         # final_board = board_display.copy()
-        replay = winner(board_print,posisi)
+        replay = winner(board_print,player)
 
         if replay == True:
             pass
